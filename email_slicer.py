@@ -15,13 +15,16 @@ def main():
     
     # Extracting emails
     emails = extract_emails(text)
+    # Convert to set to remove duplicates, then back to list
+    unique_emails = list(set(emails))  
     
-    if emails:
-        print("Found the following email addresses:")
-        for email in emails:
+    if unique_emails:
+        print("Found the following unique email addresses:")
+        for email in unique_emails:
             print(email)
     else:
         print("No email addresses found.")
+
 
 if __name__ == "__main__":
     main()
